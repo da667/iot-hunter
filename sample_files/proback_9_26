@@ -1,0 +1,14 @@
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/goform/QoSSetup"; http_uri; fast_pattern; content:"ack_policy|3d|"; http_client_body; pcre:"/ack_policy\x3d[^&]{100,}(?:&|$)/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/goform/systemCommand"; http_uri; fast_pattern; content:"command|3d|"; http_client_body; pcre:"/command\x3d[^\x26]*?(?:(?:\x3b|%3[Bb])|(?:\x0a|%0[Aa])|(?:\x60|%60)|(?:\x7c|%7[Cc])|(?:\x24|%24))+/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/goform/setWan"; http_uri; fast_pattern; content:"DeviceName|3d|"; http_client_body; pcre:"/DeviceName\x3d[^&]{100,}(?:&|$)/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/goform/setSysAdm"; http_uri; fast_pattern; content:"rm_port|3d|"; http_client_body; pcre:"/rm_port\x3d[^&]{100,}(?:&|$)/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/goform/ssid1MACFilter"; http_uri; fast_pattern; content:"Apselect_0|3d|"; http_client_body; pcre:"/Apselect_0\x3d[^\x26]*?(?:(?:\x3b|%3[Bb])|(?:\x0a|%0[Aa])|(?:\x60|%60)|(?:\x7c|%7[Cc])|(?:\x24|%24))+/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/cgi-bin/adm.cgi"; http_uri; fast_pattern; content:"newpass|3d|"; http_client_body; pcre:"/newpass\x3d[^\x26]*?(?:(?:\x3b|%3[Bb])|(?:\x0a|%0[Aa])|(?:\x60|%60)|(?:\x7c|%7[Cc])|(?:\x24|%24))+/P";)
+
+alert tcp any any -> $HOME_NET $HTTP_PORTS (flow:established,to_server; content:"POST"; http_method; content:"/cgi-bin/adm.cgi"; http_uri; fast_pattern; content:"command|3d|"; http_client_body; pcre:"/command\x3d[^\x26]*?(?:(?:\x3b|%3[Bb])|(?:\x0a|%0[Aa])|(?:\x60|%60)|(?:\x7c|%7[Cc])|(?:\x24|%24))+/P";)
+
