@@ -10,7 +10,7 @@ input and output settings.
 #!/usr/bin/env python3
 __author__ = "Tony Robinson"
 __maintainer__ = "Tony Robinson / trobinson@emergingthreats.net"
-__version__ = "3.2.1"
+__version__ = "3.2.2"
 
 
 import argparse
