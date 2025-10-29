@@ -749,3 +749,9 @@ This menu-driven python script records a number of options related to an IoT dev
 - 1 October 2025
   - 3.2.2 "Sidewinder" release
     - Fixed an infinite loop problem in option 6, for pcre choices. Whoopsie.
+- 29 October 2025
+  - 3.2.3 "Naga" release
+    - Fixed issues #3, #5, and #6
+	- #3 docbug - `venv` and `pipenv` sometimes do not include requests. Users may need to use `pip` to install `requests`.
+	- #5 NameError - rule_loop_pcre arg 5 (SQLi) was attempted to return the wrong variable name.
+	- #6 SQLi Regex Compilation - certain special characters to `pcre2` regular expressions were not properly being escaped in the SQL Injection regex of rule_loop_pcre. The regex compilation has since been corrected.
