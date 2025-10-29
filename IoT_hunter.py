@@ -2674,7 +2674,7 @@ def rule_loop_pcre(p_type, row, ven, cve_number):
             vul_string = "SQL Injection Attempt"
             classtype = "web-application-attack"
             metadata = "metadata:affected_product "+str(metadata_ven)+", tls_state plaintext, created_at "+ts_createdat+",  "+meta_cve+" deployment Perimeter, deployment Internal, confidence High, signature_severity Major, mitre_tactic_id TA0001, mitre_tactic_name Initial_Access, mitre_technique_id T1190, mitre_technique_name Exploit_Public_Facing_Application, mitre_tactic_id TA0008, mitre_tactic_name Lateral_Movement, mitre_technique_id T1210, mitre_technique_name Exploitation_Of_Remote_Services; "+str(meta_target)
-            return http_get_param_regex, vul_string, classtype, metadata
+            return param_regex, vul_string, classtype, metadata
         if arg==6:
             if args.infile:
                 try:

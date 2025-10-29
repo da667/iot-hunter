@@ -26,6 +26,8 @@ This menu-driven python script records a number of options related to an IoT dev
    requests
    urllib3
    ```
+   **Note**: Some users have noted that python venv/pipenv doesn't not include requests by default. It is suggested users confirm that they can run `import requests` if they choose to run in a virtual environment. If `requests` is not present, consider installing it to the virtual environment using `pip`.
+   
 4. To utilize the wayback machine archive option, users are recommended to enter their S3 Access and Secret keys into the script on line 19, as instructed.
    - If these creds are not entered, and the user requests archive of a url reference, they will be prompted to enther their Access/Secret key combination line.
    - The program will **not** detect whether or not the credentials **or** the format provided are valid. Please follow the instructions.
